@@ -1,9 +1,7 @@
-package com.harrison.study;
+package com.harrison.study.lambda.math;
 
-import com.harrison.study.math.MathOperation;
+import com.harrison.study.lambda.math.MathOperation;
 
-import javax.swing.text.DateFormatter;
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;

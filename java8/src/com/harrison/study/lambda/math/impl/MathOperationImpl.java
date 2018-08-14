@@ -1,6 +1,6 @@
-package com.harrison.study.math.impl;
+package com.harrison.study.lambda.math.impl;
 
-import com.harrison.study.math.MathOperation;
+import com.harrison.study.lambda.math.MathOperation;
 
 public class MathOperationImpl implements MathOperation{
     @Override

@@ -1,4 +1,4 @@
-package com.harrison.study.math;
+package com.harrison.study.lambda.math;
 
 /**
  * 定义一个有关数学操作的函数式接口

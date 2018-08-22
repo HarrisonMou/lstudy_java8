@@ -13,9 +13,21 @@ public class SampleData {
     public static final Artist georgeHarrison = new Artist("George Harrison", "UK");
     public static final Artist ringoStarr = new Artist("Ringo Starr", "UK");
 
-    public static final List<Artist> membersOfTheBeatles = Arrays.asList(johnLennon, paulMcCartney, georgeHarrison, ringoStarr);
+    public static final List<Artist> fourMenbers = Arrays.asList(johnLennon, paulMcCartney, georgeHarrison, ringoStarr);
 
-    public static final Artist theBeatles = new Artist("The Beatles", membersOfTheBeatles, "UK");
+    public static final List<Artist> threeMenbers = Arrays.asList(johnLennon, paulMcCartney, georgeHarrison);
+
+    public static final List<Artist> anotherThreeMenbers = Arrays.asList(ringoStarr, paulMcCartney, georgeHarrison);
+
+    public static final List<Artist> twoMembers = Arrays.asList(johnLennon, paulMcCartney);
+
+    public static final Artist fourMenberBeatles= new Artist("The Beatles with four menbers", fourMenbers, "USA");
+
+    public static final Artist threeMenberBeatles= new Artist("The Beatles with three menbers", threeMenbers, "UK");
+
+    public static final Artist twoMenberBeatles = new Artist("The Beatles with two menbers", twoMembers, "CN");
+
+    public static final Artist anotherThreeMenberBeatles = new Artist("The Beatles with three menbers （another）", anotherThreeMenbers, "PK");
 
     public static final Album aLoveSupreme = new Album("A Love Supreme", asList(new Track("Acknowledgement", 467), new Track("Resolution", 442)), asList(johnColtrane));
 
@@ -26,10 +38,10 @@ public class SampleData {
     public static Stream<Album> albums = Stream.of(aLoveSupreme);
 
     public static Stream<Artist> threeArtists() {
-        return Stream.of(johnColtrane, johnLennon, theBeatles);
+        return Stream.of(johnColtrane, johnLennon, fourMenberBeatles);
     }
 
     public static List<Artist> getThreeArtists() {
-        return Arrays.asList(johnColtrane, johnLennon, theBeatles);
+        return Arrays.asList(johnColtrane, johnLennon, fourMenberBeatles);
     }
 }

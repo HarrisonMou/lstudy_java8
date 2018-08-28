@@ -8,6 +8,9 @@ import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+/**
+ * 模拟一个groupBy收集器
+ */
 public class GroupngByCollector {
 
     private static final Set<Collector.Characteristics> characteristics = Collections.emptySet();

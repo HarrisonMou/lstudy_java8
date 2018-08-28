@@ -71,10 +71,46 @@ public class Main {
         //返回结果：{0=[John Coltrane], 2=[The Beatles with two menbers], 3=[The Beatles with three menbers, The Beatles with three menbers （another）]}
     }
 
+    /**
+     * 其他的一些函数
+     */
     @Test
     public void test5(){
         System.out.println(Stream.of("a", "b", "c").collect(Collectors.joining(",","[","]")));
         System.out.println(Stream.of(1, 3, 4).collect(Collectors.reducing(0, x -> x + 1, (x, y) -> x + y)));
+        System.out.println(Stream.of(1, 3, 4).reduce((x, y) -> x + y).get());
         System.out.println(Stream.of("a", "b", "c").collect(Collectors.mapping(x -> x.toUpperCase(), Collectors.joining(","))));
+    }
+
+    /**
+     * Map接口的变化
+     * computeIfAbsent
+     */
+    @Test
+    public void test6(){
+        Map<String, Integer> cache = new HashMap<String, Integer>();
+        cache.put("a",5);
+        String key = "b";
+        Integer integer = cache.computeIfAbsent(key, this::readAnotherValue);
+        System.out.println(integer);
+        System.out.println(cache.get("b"));
+
+        //上一段代码类似于
+        Integer old = cache.get(key);
+        if(old == null){
+            Integer value = readAnotherValue(key);
+            cache.put(key, value);
+        }
+    }
+
+    private Integer readAnotherValue(String key){
+        return 1;
+    }
+
+    @Test
+    public void test7(){
+        List<String> names = Arrays.asList("a", "b", "a","c","d","b","a");
+        Map<String, Long> collect = names.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        System.out.println(collect);
     }
 }
